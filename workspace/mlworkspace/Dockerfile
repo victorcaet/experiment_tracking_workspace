@@ -1,5 +1,5 @@
-FROM mltooling/ml-workspace
+FROM mltooling/ml-workspace:0.12.1
 
 # Install python packages
-RUN pip install gplearn==0.4.1 deap==1.3.1
-
+COPY libraries_pip.txt /home/libraries_pip.txt
+RUN pip install -r /home/libraries_pip.txt
